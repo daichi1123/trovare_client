@@ -1,0 +1,21 @@
+/* 変数定義部分 */
+:root {
+  --font-color: black;
+}
+
+* {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.select-button {
+  text-decoration: none;
+}
+
+.map {
+  font-weight: bold;
+  color: var(--font-color);
+}
