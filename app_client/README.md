@@ -18,11 +18,13 @@ this application is you can find good restrant near hear
 
 - Make Coupon
 - Regist Your GOOD Restaurants
+
 There will be more and more functions from now on...
 
 ### Client
 
 - Find GOOD Restaurants Nearby
+
 There will be more and more functions from now on...
 
 
