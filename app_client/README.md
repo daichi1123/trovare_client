@@ -1,3 +1,40 @@
+## What is This Application
+
+this application is you can find good restrant near hear
+
+## User Type
+
+- Admin
+- Owner
+- Client
+
+## What Can You Do
+
+### Admin
+
+- Can Use all Functions
+
+### Owner
+
+- Make Coupon
+- Regist Your GOOD Restaurants
+There will be more and more functions from now on...
+
+### Client
+
+- Find GOOD Restaurants Nearby
+- 
+There will be more and more functions from now on...
+
+
+
+
+<br />
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
