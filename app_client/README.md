@@ -23,7 +23,6 @@ There will be more and more functions from now on...
 ### Client
 
 - Find GOOD Restaurants Nearby
-- 
 There will be more and more functions from now on...
 
 
