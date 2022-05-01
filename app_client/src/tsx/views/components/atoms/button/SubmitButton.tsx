@@ -4,7 +4,11 @@ import AddIcon from '@mui/icons-material/Add';
 
 function SubmitButton() {
   return (
-      <Button variant="contained" startIcon={<AddIcon />}>
+      <Button
+        variant="contained"
+        startIcon={<AddIcon />}
+        type="submit"
+      >
         Submit
       </Button> 
   );
