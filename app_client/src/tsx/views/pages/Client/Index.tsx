@@ -26,7 +26,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function Index() {
+const Index = () => {
   // styles.liをどこかに定義できるようにする
   return (
     <>
@@ -77,7 +77,6 @@ function Index() {
             <RestaurantCard/>
           </Grid>
         </Grid>
-
       </div>
     </>
   );
