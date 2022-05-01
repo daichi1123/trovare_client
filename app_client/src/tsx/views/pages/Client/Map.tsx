@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MapHeader from "../../components/block/MapHeader";
 
-function Map() {
+const Map = () => {
   return (
-    <div>
+    <>
+      <MapHeader/>
       <div>restaunt zip-address</div>
       <Link to="/">リンクテキスト</Link>
-    </div> 
+    </> 
   );
 }
 
 
-export default Map
+export default Map;
