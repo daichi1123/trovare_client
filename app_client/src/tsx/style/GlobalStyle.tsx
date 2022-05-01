@@ -1,5 +1,7 @@
 import React from 'react'
 
-export default function GlobalStyle() {
+const GlobalStyle = () => {
   
 }
+
+export default GlobalStyle;
