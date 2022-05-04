@@ -1,12 +1,12 @@
 import React from "react";
 import OwnerHeader from "../../components/block/OwnerHeader";
-import CreateRestaurantField from "../../components/block/CreateRestaurantField";
+import CreateRestaurantForm from "../../components/block/CreateRestaurantForm";
 
 const CreateRestaurant = () => {
   return (
     <>
       <OwnerHeader />
-      <CreateRestaurantField />
+      <CreateRestaurantForm />
     </>
   );
 };
