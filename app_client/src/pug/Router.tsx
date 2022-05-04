@@ -13,8 +13,8 @@ import Map from "../tsx/views/pages/Client/Map";
 import SearchRestrant from "../tsx/views/pages/Client/SearchRestrant";
 
 import Coupon from "../tsx/views/pages/Owner/Coupon";
-import RegisterRestrant from "../tsx/views/pages/Owner/RegistRestrant";
 import AuthGoogleByFirebase from "../tsx/views/pages/Owner/OwnerSignin";
+import CreateRestaurant from "../tsx/views/pages/Owner/CreateRestaurant";
 
 
 function Router() {
@@ -29,7 +29,7 @@ function Router() {
         {/* Owner */}
         <Route exact path="/owner/signin" component={AuthGoogleByFirebase} />
         <Route exact path="/owner/coupons/create" component={Coupon} />
-        <Route exact path="/owner/restaurants/register" component={RegisterRestrant} />
+        <Route exact path="/owner/restaurants/create" component={CreateRestaurant} />
 
         {/* Admin */}
         <Route exact path="/admin/signin" component={AdminSignIn} />

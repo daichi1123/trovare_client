@@ -1,5 +1,5 @@
-import React from 'react';
-import { auth } from '../../../../ts/firebase'; 
+import React from "react";
+import { auth } from "../../../../ts/firebase";
 
 const Feed = () => {
   return (
@@ -7,6 +7,6 @@ const Feed = () => {
       <button onClick={() => auth.signOut()}>Logout</button>
     </>
   );
-}
+};
 
 export default Feed;
