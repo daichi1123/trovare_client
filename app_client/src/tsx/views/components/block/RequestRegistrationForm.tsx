@@ -9,7 +9,8 @@ import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Card } from "@material-ui/core";
+import { RequestContent } from "../atoms/content/RequestContent";
+import { useForm } from "react-hook-form";
 
 function Copyright(props: any) {
   return (
@@ -32,63 +33,81 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export const RequestRegistrationForm = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+  const handleSub = (e: any) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
     console.log({
       email: data.get("email"),
-      password: data.get("password"),
     });
   };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   return (
     <>
-        <ThemeProvider theme={theme}>
-          <Container component="main" maxWidth="xs">
-            <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <MailOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              オーナーの登録
+            </Typography>
+            <RequestContent />
             <Box
-              sx={{
-                marginTop: 8,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
+              component="form"
+              onSubmit={handleSubmit(handleSub)}
+              noValidate
+              sx={{ mt: 1 }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <MailOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                オーナーの登録
-              </Typography>
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                sx={{ mt: 1 }}
+              <TextField
+                id="email"
+                {...register("email", {
+                  required: true,
+                  pattern:
+                    /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/,
+                })}
+                fullWidth
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                margin="normal"
+              />
+              {errors.email && errors.email.type === "required" && (
+                <span className="error-message">Emailは必須項目です。</span>
+              )}
+              {errors.email && errors.email.type === "pattern" && (
+                <span className="error-message">
+                  Emailの形式に間違いがあります。
+                </span>
+              )}
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
               >
-                <TextField
-                  id="email"
-                  required
-                  fullWidth
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                  margin="normal"
-                />
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                >
-                  登録申請をする
-                </Button>
-              </Box>
+                登録申請をする
+              </Button>
             </Box>
-            <Copyright sx={{ mt: 8, mb: 4 }} />
-          </Container>
-        </ThemeProvider>
+          </Box>
+          <Copyright sx={{ mt: 8, mb: 4 }} />
+        </Container>
+      </ThemeProvider>
     </>
   );
 };
