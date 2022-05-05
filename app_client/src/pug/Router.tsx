@@ -7,7 +7,6 @@ import CreateGenre from "../tsx/views/pages/Admin/CreateGenre";
 import Dashboard from "../tsx/views/pages/Admin/Dashboard";
 import AdminSignIn from "../tsx/views/pages/Admin/AdminSignin";
 
-import Index from "../tsx/views/pages/Client/Index";
 // Google Mapsに使用する
 import Map from "../tsx/views/pages/Client/Map";
 import SearchRestrant from "../tsx/views/pages/Client/SearchRestrant";
@@ -16,19 +15,22 @@ import Coupon from "../tsx/views/pages/Owner/Coupon";
 import AuthGoogleByFirebase from "../tsx/views/pages/Owner/OwnerSignin";
 import CreateRestaurant from "../tsx/views/pages/Owner/CreateRestaurant";
 import { NotFound } from "../tsx/views/pages/errors/NotFound";
+import { Top } from "../tsx/views/pages/Client/Top";
+import { RequestRegistration } from "../tsx/views/pages/Owner/RequestRegistration";
 
 function Router() {
   return (
     <BrowserRouter>
       <Switch>
         {/* Client */}
-        <Route exact path="/" component={Index} />
+        <Route exact path="/" component={Top} />
         <Route exact path="/map" component={Map} />
         <Route exact path="/search" component={SearchRestrant} />
 
         {/* Owner */}
         <Route exact path="/owner/signin" component={AuthGoogleByFirebase} />
         <Route exact path="/owner/coupons/create" component={Coupon} />
+        <Route exact path="/owner/registrations/request" component={RequestRegistration} />
         <Route
           exact
           path="/owner/restaurants/create"

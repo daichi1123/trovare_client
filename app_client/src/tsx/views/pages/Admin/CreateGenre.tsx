@@ -8,9 +8,11 @@ import TextField from "@mui/material/TextField";
 const CreateGenre = () => {
   const [genre, setGenre] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-      setGenre(e.target.value)
-      console.log(e);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setGenre(e.target.value);
+    console.log(e);
   };
 
   const submitNewGenre = (e: any) => {
@@ -19,9 +21,9 @@ const CreateGenre = () => {
     axios
       .post(process.env.REACT_APP_DEV_API_URL + "/v1/genres/create", {
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        name: genre
+        name: genre,
       })
       .then((res) => {
         console.log(res);

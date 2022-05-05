@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@mui/material/TextField";
@@ -11,17 +11,6 @@ import { useForm } from "react-hook-form";
 import Box from "@mui/material/Box";
 
 const PageTitle = "レストランの登録";
-
-const validationMsg = (number: number) => [
-  {
-    zip: "郵便番号",
-    restaurantName: "レストラン名",
-  },
-  {
-    required: "は必須項目です。",
-    max: `は${number}文字いないです`,
-  },
-];
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -102,11 +91,6 @@ const CreateRestaurantForm = () => {
             {/* <form onSubmit={submitRestaurant}> */}
             <Grid item md={12}>
               <TextField
-                inputProps={{
-                  type: "string",
-                  maxLength: 20,
-                  pattern: "^[ぁ-んァ-ンa-zA-Z0-9_]+$",
-                }}
                 id="restaurantName"
                 {...register("restaurantName", {
                   required: true,

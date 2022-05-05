@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import Header from "../../components/block/Header";
+import Headers from "../../components/block/Headers";
 
 
 import styles from "../../../style/pages/Client/Index.module.css";
@@ -30,7 +30,7 @@ const Index = () => {
   // styles.liをどこかに定義できるようにする
   return (
     <>
-      <Header/>
+      <Headers/>
       <div>
         <Stack
           direction="row"
