@@ -15,7 +15,7 @@ import SearchRestrant from "../tsx/views/pages/Client/SearchRestrant";
 import Coupon from "../tsx/views/pages/Owner/Coupon";
 import AuthGoogleByFirebase from "../tsx/views/pages/Owner/OwnerSignin";
 import CreateRestaurant from "../tsx/views/pages/Owner/CreateRestaurant";
-
+import { NotFound } from "../tsx/views/pages/errors/NotFound";
 
 function Router() {
   return (
@@ -29,15 +29,22 @@ function Router() {
         {/* Owner */}
         <Route exact path="/owner/signin" component={AuthGoogleByFirebase} />
         <Route exact path="/owner/coupons/create" component={Coupon} />
-        <Route exact path="/owner/restaurants/create" component={CreateRestaurant} />
+        <Route
+          exact
+          path="/owner/restaurants/create"
+          component={CreateRestaurant}
+        />
 
         {/* Admin */}
         <Route exact path="/admin/signin" component={AdminSignIn} />
         <Route exact path="/admin/genres/create" component={CreateGenre} />
         <Route exact path="/admin/dashboard" component={Dashboard} />
-        
+
         {/* Test */}
         <Route exact path="/owner" component={Owner} />
+
+        {/* 404 page */}
+        <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
