@@ -14,9 +14,10 @@ import {
 } from "@mui/material/";
 
 import { ApplicationTitle } from "../../../utils/const";
-import "../../../style/components/atoms/Header.css";
+import "../../../style/components/block/Header.css";
 
 const pages = ["Map", "絞り込み検索", "保存済み"];
+const routes = ["/restaurants/map", "/restaurants/search", "/restaurants/save"];
 
 export const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -46,7 +47,9 @@ export const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            <Link to="/" className="title">{ApplicationTitle}</Link>
+            <Link to="/" className="title">
+              {ApplicationTitle}
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -94,13 +97,15 @@ export const Header = () => {
             {ApplicationTitle}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, i) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <a className="routing" href={routes[i]}>
+                  {page}
+                </a>
               </Button>
             ))}
           </Box>
