@@ -4,4 +4,4 @@ const GlobalStyle = () => {
   
 }
 
-export default GlobalStyle;
+export default GlobalStyle
