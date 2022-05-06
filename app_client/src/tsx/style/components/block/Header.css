@@ -38,3 +38,8 @@
   opacity: 1;
   right: 0;
 }
+
+.routing {
+  color: inherit;
+  text-decoration: none;
+}

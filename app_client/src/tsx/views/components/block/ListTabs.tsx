@@ -15,7 +15,7 @@ export const ListTabs = () => {
 
   return (
     <>
-      <Grid container alignItems="center" justify="center">
+      <Grid container alignItems="center" justifyContent="center">
         <Box sx={{ width: "50%", typography: "body1" }}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

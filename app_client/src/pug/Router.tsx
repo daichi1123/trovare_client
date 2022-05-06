@@ -9,7 +9,7 @@ import AdminSignIn from "../tsx/views/pages/Admin/AdminSignin";
 
 // Google Mapsに使用する
 import Map from "../tsx/views/pages/Client/Map";
-import SearchRestrant from "../tsx/views/pages/Client/SearchRestrant";
+import { SearchRestaurants } from "../tsx/views/pages/Client/SearchRestaurants";
 
 import Coupon from "../tsx/views/pages/Owner/Coupon";
 import AuthGoogleByFirebase from "../tsx/views/pages/Owner/OwnerSignin";
@@ -17,20 +17,26 @@ import CreateRestaurant from "../tsx/views/pages/Owner/CreateRestaurant";
 import { NotFound } from "../tsx/views/pages/errors/NotFound";
 import { Top } from "../tsx/views/pages/Client/Top";
 import { RequestRegistration } from "../tsx/views/pages/Owner/RequestRegistration";
+import { SaveRestaurants } from "../tsx/views/pages/Client/SaveRestaurants";
 
-function Router() {
+export const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
         {/* Client */}
         <Route exact path="/" component={Top} />
-        <Route exact path="/map" component={Map} />
-        <Route exact path="/search" component={SearchRestrant} />
+        <Route exact path="/restaurants/map" component={Map} />
+        <Route exact path="/restaurants/save" component={SaveRestaurants} />
+        <Route exact path="/restaurants/search" component={SearchRestaurants} />
 
         {/* Owner */}
         <Route exact path="/owner/signin" component={AuthGoogleByFirebase} />
         <Route exact path="/owner/coupons/create" component={Coupon} />
-        <Route exact path="/owner/registrations/request" component={RequestRegistration} />
+        <Route
+          exact
+          path="/owner/registrations/request"
+          component={RequestRegistration}
+        />
         <Route
           exact
           path="/owner/restaurants/create"
@@ -50,6 +56,4 @@ function Router() {
       </Switch>
     </BrowserRouter>
   );
-}
-
-export default Router;
+};

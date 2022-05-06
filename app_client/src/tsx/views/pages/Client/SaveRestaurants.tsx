@@ -1,14 +1,11 @@
 import React from "react";
 import { Header } from "../../components/block/Header";
 
-const Map = () => {
+export const SaveRestaurants = () => {
   return (
     <>
       <Header/>
-      <h1>Map Page</h1>
+      <h1>SaveRestaurant Page</h1>
     </> 
   );
 }
-
-
-export default Map;

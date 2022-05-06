@@ -15,7 +15,7 @@ export const SearchCard = () => {
       <Grid
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         style={{ padding: "50px" }}
       >
         <Card
