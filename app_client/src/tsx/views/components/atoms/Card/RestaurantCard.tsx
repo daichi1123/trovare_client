@@ -20,7 +20,7 @@ export const RestaurantCard = (): JSX.Element => {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
+                  height="240"
                   image={RstPromotion.img}
                   alt="green iguana"
                 />
