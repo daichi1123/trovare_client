@@ -1,0 +1,26 @@
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.rst-lists {
+  display: inline-flex;
+  margin: 1.2rem 1.2rem 0 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.rst-links {
+  padding: 0.7rem 1.4rem;
+  color: #595960;
+  font-size: 1rem;
+}
