@@ -98,15 +98,15 @@ export const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, i) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <a className="routing" href={routes[i]}>
+              <a className="routing" href={routes[i]}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
                   {page}
-                </a>
-              </Button>
+                </Button>
+              </a>
             ))}
           </Box>
 
