@@ -2,23 +2,8 @@ import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { render } from "../../atoms/Loading/GoogleMapLoading";
+import { MapProps, initMapProps } from "../../../../../ts/type/GoogleMap/GoogleMapTypes";
 // import { GoogleMapApiKey } from "../../../../utils/const";
-
-interface MapProps {
-  center: {
-    lat: number;
-    lng: number;
-  };
-  zoom: number;
-}
-
-const initMapProps: MapProps = {
-  center: {
-    lat: 35.6092,
-    lng: 139.7303,
-  },
-  zoom: 15,
-};
 
 export const GoogleMaps = (): JSX.Element => {
   const [mapProps, setMapProps] = useState<MapProps>(initMapProps);
