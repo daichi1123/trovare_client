@@ -119,7 +119,6 @@ const CreateRestaurantForm = () => {
                   )}
               </Box>
             </Grid>
-            Ï
             <TextField
               id="zipCode"
               label="郵便番号*"

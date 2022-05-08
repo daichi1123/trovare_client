@@ -22,7 +22,7 @@ export const RestaurantCard = (): JSX.Element => {
                   component="img"
                   height="240"
                   image={RstPromotion.img}
-                  alt="green iguana"
+                  alt="food imgs"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
