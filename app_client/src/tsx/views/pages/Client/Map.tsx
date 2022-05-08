@@ -1,14 +1,12 @@
 import React from "react";
 import { Header } from "../../components/block/Header";
+import { GoogleMaps } from "../../components/block/Map/GoogleMap";
 
-const Map = () => {
+export const Map = () => {
   return (
     <>
-      <Header/>
-      <h1>Map Page</h1>
-    </> 
+      <Header />
+      <GoogleMaps />
+    </>
   );
-}
-
-
-export default Map;
+};
