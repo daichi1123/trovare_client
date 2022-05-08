@@ -8,7 +8,7 @@ import Dashboard from "../tsx/views/pages/Admin/Dashboard";
 import AdminSignIn from "../tsx/views/pages/Admin/AdminSignin";
 
 // Google Mapsに使用する
-import Map from "../tsx/views/pages/Client/Map";
+import { Map } from "../tsx/views/pages/Client/Map";
 import { SearchRestaurants } from "../tsx/views/pages/Client/SearchRestaurants";
 
 import Coupon from "../tsx/views/pages/Owner/Coupon";
