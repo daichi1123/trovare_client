@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { render } from "../../atoms/Loading/GoogleMapLoading";
-import { MapProps, initMapProps } from "../../../../../ts/type/GoogleMap/GoogleMapTypes";
+import {
+  MapProps,
+  initMapProps,
+} from "../../../../../ts/type/GoogleMap/GoogleMapTypes";
 // import { GoogleMapApiKey } from "../../../../utils/const";
 
 export const GoogleMaps = (): JSX.Element => {
