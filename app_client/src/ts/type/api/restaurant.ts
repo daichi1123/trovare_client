@@ -1,6 +1,15 @@
-export type Restaurant = {
-  name: string,
-  description: string,
-  zip_code: number,
-  address: string
-}
+export type RstListType = {
+  id: number;
+  name: string;
+  image_url: string;
+  description: string;
+  rating: number;
+}[];
+
+export type RstAllValues = {
+  id: number;
+  name: string;
+  image_url: string;
+  description: string;
+  rating: number;
+}[];
