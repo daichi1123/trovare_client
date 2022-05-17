@@ -1,7 +1,7 @@
 // Application
 export const ApplicationTitle = process.env.REACT_APP_TITLE;
 export const ApiURL = process.env.REACT_APP_DEV_API_URL;
-export const GoogleMapApiKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
+export const GoogleMapApiKey = String(process.env.REACT_APP_GOOGLE_MAP_API_KEY);
 
 // firebase
 export const FirebaseApiKey = process.env.REACT_APP_FIREBASE_APIKEY;
