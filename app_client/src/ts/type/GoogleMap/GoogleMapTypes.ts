@@ -1,3 +1,4 @@
+
 export interface MapProps {
   center: {
     lat: number;
@@ -11,5 +12,30 @@ export const initMapProps: MapProps = {
     lat: 35.6092,
     lng: 139.7303,
   },
-  zoom: 15,
+  zoom: 17,
 };
+
+type placeMarkerType = {
+  coordinate : {
+    lat: number,
+    lng: number,
+  }
+  shop: string
+}[]
+
+export const placeMarkerProps: placeMarkerType = [
+  {
+    coordinate : {
+      lat: 35.644839,
+      lng: 139.698895,
+    },
+    shop: "あわよくばー"
+  },
+  {
+    coordinate : {
+      lat: 35.625386,
+      lng: 139.722984,
+    },
+    shop: "焼肉問屋 じゅう兵衛 本店"
+  }
+]
