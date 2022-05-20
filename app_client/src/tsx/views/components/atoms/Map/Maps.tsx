@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -20,6 +20,22 @@ const divStyle = {
 
 export const Maps = () => {
   const [size, setSize] = useState<undefined | google.maps.Size>(undefined);
+  const [isAvailable, setAvailable] = useState(false);
+  const [position, setPosition] = useState({ lat: 0, lng: 0 });
+
+  // useEffectが実行されているかどうかを判定するために用意しています
+  const isFirstRef = useRef(true);
+
+
+  useEffect(() => {
+    isFirstRef.current = false;
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords;
+      setPosition({ lat: latitude, lng: longitude });
+      setAvailable(true);
+    });
+  }, [isAvailable]);
+
   const infoWindowOptions = {
     pixelOffset: size,
   };
@@ -29,7 +45,7 @@ export const Maps = () => {
 
   return (
     <LoadScript googleMapsApiKey={GoogleMapApiKey} onLoad={() => createOffsetSize()}>
-      <GoogleMap mapContainerStyle={containerStyle} center={initMapProps.center} zoom={initMapProps.zoom}>
+      <GoogleMap mapContainerStyle={containerStyle} center={ !isAvailable ? initMapProps.center : position } zoom={initMapProps.zoom}>
         {placeMarkerProps.map((placeMarkerProp) => (
           <>
             <Marker position={placeMarkerProp.coordinate}/>
