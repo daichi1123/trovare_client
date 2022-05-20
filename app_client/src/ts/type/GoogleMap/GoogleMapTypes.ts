@@ -9,8 +9,8 @@ export interface MapProps {
 
 export const initMapProps: MapProps = {
   center: {
-    lat: 35.6092,
-    lng: 139.7303,
+    lat: 35.6809591,
+    lng: 139.7673068,
   },
   zoom: 17,
 };
