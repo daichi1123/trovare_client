@@ -5,8 +5,9 @@ import {
   InfoWindow,
   Marker,
 } from "@react-google-maps/api";
-import {GoogleMapApiKey} from "../../../../utils/const";
+import {ApiURL, GoogleMapApiKey} from "../../../../utils/const";
 import {initMapProps, placeMarkerProps} from "../../../../../ts/type/GoogleMap/GoogleMapTypes"
+import axios from "axios";
 
 const containerStyle = {
   height: "100vh",
@@ -34,6 +35,15 @@ export const Maps = () => {
       setPosition({ lat: latitude, lng: longitude });
       setAvailable(true);
     });
+
+    // Thenの処理でお店の住所を受け取るaxiosを叩く
+    if (isAvailable == true) {
+      axios.post(`${ApiURL}/v1/locations/post/current`, {
+        lat: position.lat,
+        lng: position.lng,
+      }).then(r => console.log(r))
+        .catch(err => console.log(err));
+    }
   }, [isAvailable]);
 
   const infoWindowOptions = {
